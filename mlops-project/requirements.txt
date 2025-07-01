@@ -7,7 +7,10 @@ pytest~=7.2
 pytest-cov~=3.0
 pytest-mock>=1.7.1, <2.0
 ruff~=0.1.8
-pandas==2.2.2
+pandas<2.2.2
 numpy
 scikit-learn
-great_expectations==0.18.14\
+hsfs==3.7.9
+nannyml==0.13.0
+great_expectations==0.18.12      
+seaborn==0.13.2   
