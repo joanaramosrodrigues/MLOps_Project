@@ -18,8 +18,8 @@ from mlops_project.pipelines import (
 def register_pipelines() -> dict[str, Pipeline]:
     return {
         "ingestion": ingestion.create_pipeline(), 
-        #"data_unit_tests": data_unit_tests.create_pipeline(),
-        #"evaluation": evaluation.create_pipeline(),
+        "data_unit_tests": data_unit_tests.create_pipeline(),
+        "evaluation": evaluation.create_pipeline(),
         "feature_selection": feature_selection.create_pipeline(),
         "model_predict": model_predict.create_pipeline(),
         "model_training": model_training.create_pipeline(),
@@ -29,7 +29,7 @@ def register_pipelines() -> dict[str, Pipeline]:
         "split_train_pipeline": split_train_pipeline.create_pipeline(),
         "__default__": Pipeline([
             #ingestion.create_pipeline(),
-            #data_unit_tests.create_pipeline(),
+            data_unit_tests.create_pipeline(),
             split_data.create_pipeline(),
             preprocessing_train.create_pipeline(),
             split_train_pipeline.create_pipeline(),
@@ -37,6 +37,6 @@ def register_pipelines() -> dict[str, Pipeline]:
             model_training.create_pipeline(),
             preprocessing_batch.create_pipeline(),
             model_predict.create_pipeline(),
-            #evaluation.create_pipeline()
+            evaluation.create_pipeline()
         ])
     }
